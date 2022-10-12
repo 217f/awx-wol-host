@@ -7,9 +7,9 @@
     broadcast: '{{wol_broadcast}}'
   delegate_to: localhost
 
-- name: Wait {{host_timeout}} seconds for system to become reachable
+- name: Wait {{connection_timeout}} seconds for system to become reachable
   wait_for_connection:
-    timeout: '{{host_timeout}}'
+    timeout: '{{connection_timeout}}'
 
 - name: Gather facts for first time
   setup:
