@@ -1,0 +1,8 @@
+---
+galaxy_info:
+  role_name: wol_host
+  author: "Markus Hosiner"
+  company: ecomDATA
+  license: BSD
+  min_ansible_version: 1.4
+dependencies: []
