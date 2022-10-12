@@ -6,4 +6,4 @@ galaxy_info:
   license: BSD
   min_ansible_version: 1.4
 dependencies:
-  - community.general.wakeonlan
+  - community.general
