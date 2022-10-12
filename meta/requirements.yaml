@@ -1,4 +1,5 @@
+---
 dependencies:
   - name: community.general
-    src: https://github.com/ansible-collections/community.general
+    src: git+https://github.com/ansible-collections/community.general.git
     version: main
