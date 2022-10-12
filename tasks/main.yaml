@@ -1,5 +1,5 @@
 ---
-# This role contains common plays that will run on all nodes.
+# This role contains the wake on lan procedure.
 
 - name: Send magic Wake-On-Lan packet to {{host_mac}} via broadcast {{wol_broadcast}}
   wakeonlan:
