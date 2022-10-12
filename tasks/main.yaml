@@ -1,0 +1,15 @@
+---
+# This role contains common plays that will run on all nodes.
+
+- name: Send magic Wake-On-Lan packet to {{host_mac}} via broadcast {{wol_broadcast}}
+  wakeonlan:
+    mac: '{{host_mac}}'
+    broadcast: '{{wol_broadcast}}'
+  delegate_to: localhost
+
+- name: Wait {{host_timeout}} seconds for system to become reachable
+  wait_for_connection:
+    timeout: '{{host_timeout}}'
+
+- name: Gather facts for first time
+  setup:
