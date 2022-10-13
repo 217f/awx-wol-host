@@ -1,15 +1,15 @@
 ---
 # This role contains the wake on lan procedure.
 
-- name: Send magic Wake-On-Lan packet to {{host_mac}} via broadcast {{wol_broadcast}}
+- name: Print WOL Info
+  ansible.builtin.debug:
+    msg: 'MAC: {{host_mac}} BROADCAST: {{wol_broadcast}}'
+
+- name: Send magic Wake-On-Lan packets
   wakeonlan:
     mac: '{{host_mac}}'
     broadcast: '{{wol_broadcast}}'
   delegate_to: localhost
-
-- name: Print the gateway for each host when defined
-  ansible.builtin.debug:
-    msg: A {{host_mac}} B {{wol_broadcast}}
 
 - name: Wait {{connection_timeout}} seconds for system to become reachable
   wait_for_connection:
