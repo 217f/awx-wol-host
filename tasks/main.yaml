@@ -20,7 +20,3 @@
 
 - name: Gather facts for first time
   setup:
-
-- name: Print all available facts
-  ansible.builtin.debug:
-    var: ansible_facts
