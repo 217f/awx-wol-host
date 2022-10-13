@@ -5,10 +5,13 @@
   ansible.builtin.debug:
     msg: 'MAC: {{host_mac}} BROADCAST: {{wol_broadcast}}'
 
+
 - name: Send magic Wake-On-Lan packets
-  wakeonlan:
-    mac: '{{host_mac}}'
-    broadcast: '{{wol_broadcast}}'
+  ansible.builtin.uri:
+    url: http://172.22.205.92:8080/wol/{{host_mac}}
+#  wakeonlan:
+#    mac: '{{host_mac}}'
+#    broadcast: '{{wol_broadcast}}'
   delegate_to: localhost
 
 - name: Wait {{connection_timeout}} seconds for system to become reachable
